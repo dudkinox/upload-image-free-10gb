@@ -35,7 +35,7 @@ const addPost = async (req, res, next) => {
         filename.split("/")[1] +
         "?alt=media";
 
-      return res.status(200).send({data: link, description: "upload file success"});
+      return res.status(200).send({data: {path: link, name: filename.split("/")[1]}, description: "upload file success"});
     });
  
     blobStream.end(req.file.buffer);
