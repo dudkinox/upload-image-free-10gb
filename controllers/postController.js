@@ -6,7 +6,7 @@ const bucket = storage.bucket();
 
 const addPost = async (req, res, next) => {
   try {
-    const folder = "post";
+    const folder = req.body.path;
     const filename = `${folder}/${Date.now()}`;
     const fileUpload = bucket.file(filename);
 
