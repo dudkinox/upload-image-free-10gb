@@ -17,7 +17,7 @@ const router = express.Router();
 
 router.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
-router.post("/storages/images", multer.single("file"), addPost);
+router.post("/storages", multer.single("file"), addPost);
 
 module.exports = {
   routes: router,
