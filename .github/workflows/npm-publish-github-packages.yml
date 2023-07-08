@@ -34,6 +34,7 @@ jobs:
           port: ${{ secrets.PORT_SSH }}
           script: |
             whoami
+            cd storage
             docker login --username=${{ secrets.DOCKERHUB_USERNAME }} --password=${{ secrets.DOCKERHUB_TOKEN }}
             docker compose down
             docker compose pull
